@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ctf_task
+      POSTGRES_DB: ctf
+      POSTGRES_HOST: db
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
